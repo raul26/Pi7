@@ -1,7 +1,10 @@
 var express = require('express');
 var app = express();
 var handlebars = require('express3-handlebars').create({defaultLayout:'main'});
-
+var info = {
+  nombre: 'raul',
+  edad: 12,
+}
 app.engine('handlebars', handlebars.engine);
 
 app.set('view engine', 'handlebars');
@@ -14,7 +17,10 @@ app.get('/', function(req, res){
   res.render('home');
 });
 
-
+app.get('/api', function  (req, res) {
+  res.type('text/plain');
+  res.send(info)
+})
 // custom 404 page
 app.use(function(req, res){
   res.status(404);
