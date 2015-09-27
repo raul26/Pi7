@@ -1,5 +1,7 @@
 var express = require('express');
 var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
 var handlebars = require('express3-handlebars').create({defaultLayout:'main'});
 var info = {
   nombre: 'raul',
@@ -17,6 +19,10 @@ app.get('/', function(req, res){
   res.render('home');
 });
 
+
+io.on('connection', function  (socket) {
+  console.log('jala')
+})
 app.get('/api', function  (req, res) {
   res.type('text/plain');
   res.send(info)
@@ -33,7 +39,6 @@ app.use(function(err, req, res, next){
   res.status(500);
   res.render('500')
 });
-
-app.listen(app.get('port'), function(){
-  console.log( 'Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.' );
+server.listen(3000, function () {
+  console.log('listenning on port 3000');
 });
