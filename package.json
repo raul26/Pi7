@@ -1,0 +1,28 @@
+{
+  "name": "pi7",
+  "version": "0.0.1",
+  "description": "Integrator Project 7th G",
+  "main": "index",
+  "scripts": {
+    "test": "hi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raul26/Pi7.git"
+  },
+  "keywords": [
+    "sink",
+    "udp",
+    "package"
+  ],
+  "author": "Raul Vargas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raul26/Pi7/issues"
+  },
+  "homepage": "https://github.com/raul26/Pi7#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express3-handlebars": "^0.5.2"
+  }
+}
