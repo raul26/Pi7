@@ -23,7 +23,7 @@ io.on('connection', function  (socket) {
 
   srv.on("message", function (msg, rinfo) {
     console.log("server got: " + msg + " from " + rinfo.address + ":" + rinfo.port);
-    io.sockets.emit('message', 'hola');
+    io.sockets.emit('message', msg);
   });
 
   srv.on("listening", function () {
@@ -37,7 +37,7 @@ io.on('connection', function  (socket) {
     process.exit(0);
   });
 
-  srv.bind('3000');
+  srv.bind('9998');
 })
 
 
